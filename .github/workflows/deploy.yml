@@ -37,7 +37,7 @@ jobs:
         working-directory: ./frontend
         run: npm run build
         env:
-          VITE_API_URL: https://careerforge-api.onrender.com/api
+          VITE_API_URL: https://careerforge-ai-rmvu.onrender.com/api
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
