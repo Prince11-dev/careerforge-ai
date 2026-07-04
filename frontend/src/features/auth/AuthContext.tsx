@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { api } from '../services/api'
+import { api } from '../../services/api'
 
 interface User {
   id: number
@@ -26,7 +26,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const token = localStorage.getItem('token')
     if (token) {
       api.get('/auth/me')
-        .then(res => setUser(res.data))
+        .then((res: any) => setUser(res.data))
         .catch(() => localStorage.removeItem('token'))
         .finally(() => setLoading(false))
     } else {
