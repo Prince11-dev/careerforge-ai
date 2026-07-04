@@ -31,13 +31,13 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./frontend
-        run: npm install
+        run: npm ci
 
       - name: Build
         working-directory: ./frontend
         run: npm run build
         env:
-          VITE_API_URL: https://careerforge-ai-rmvu.onrender.com/api
+          VITE_API_URL: https://careerforge-api.onrender.com/api
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -50,4 +50,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
- 
