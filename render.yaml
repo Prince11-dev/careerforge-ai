@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: careerforge-api
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./careerforge.db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: MOCK_AI_MODE
+        value: true
+      - key: FRONTEND_URL
+        value: https://prince11-dev.github.io/careerforge-ai
+      - key: PYTHON_VERSION
+        value: 3.12.0
